@@ -8,11 +8,11 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Student Information
 
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | name-here     |
-| Student ID    | id-here       |
-| Student Email | email-here    |
+|               | Information         |
+|:-------------:|:-------------------:|
+| Student Name  | Sabrina Diaz-Erazo  |
+| Student ID    | 916931527           |
+| Student Email | sdiazerazo@sfsu.edu |
 
 
 
