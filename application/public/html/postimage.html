@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Post Image</title>
+        <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body>
@@ -13,27 +14,27 @@
         
             <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="registration.html">Registration</a></li>
-                <li><a href="postimage.html">Post Image</a></li>
-                <li><a href="viewpost.html">View Post</a></li>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="registration.html">Registration</a>
+                <a href="postimage.html">Post Image</a>
+                <a href="viewpost.html">View Post</a>
             </ul>
             </nav>
         </header>
         
         <form>
-            <p>
+            <div class="input-group">
                 <label for="title">Title</label>
-                <input type="text" name="title" 
+                <input class="input-text" type="text" name="title" 
                 id="title">
-            </p>
+            </div>
 
-            <p>
+            <div class="input-group">
                 <label for="description">Description</label>
-                <input type="text" name="description" 
+                <input class="input-text" type="text" name="description" 
                 id="description">
-            </p>
+            </div>
 
             <p>
                 <label for="image">Image</label>
@@ -48,7 +49,7 @@
             </p>
 
             <p>
-                <input type="submit" value="Post Image">
+                <input class="button" type="submit" value="Post Image">
             </p>
 
         </form>

@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Registration</title>
+        <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body>
@@ -13,33 +14,33 @@
     
             <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="registration.html">Registration</a></li>
-                <li><a href="postimage.html">Post Image</a></li>
-                <li><a href="viewpost.html">View Post</a></li>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="registration.html">Registration</a>
+                <a href="postimage.html">Post Image</a>
+                <a href="viewpost.html">View Post</a>
             </ul>
             </nav>
         </header>
         
         <form>
-            <p>
+            <p class="input-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" 
+                <input class="input-text" type="text" name="username" 
                 id="username">
     
                 <label for="email">Email</label>
-                <input type="text" name="email"
+                <input class="input-text" type="text" name="email"
                 id="email">
             </p>
 
-            <p>
+            <p class="input-group">
                 <label for="password">Password</label>
-                <input type="password" name="password"
+                <input class="input-text" type="password" name="password"
                  id="password">
     
                 <label for="confirmpassword">Confirm Password</label>
-                <input type="password" name="confirmpassword"
+                <input class="input-text" type="password" name="confirmpassword"
                  id="confirmpassword">
             </p>
 
@@ -54,7 +55,7 @@
             </p>
 
             <p>
-                <input type="submit" value="Submit">
+                <input class="button" type="submit" value="Submit">
             </p>
 
         </form>

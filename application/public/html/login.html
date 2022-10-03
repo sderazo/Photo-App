@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Login</title>
+        <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body>
@@ -13,25 +14,29 @@
 
             <nav> 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="registration.html">Registration</a></li>
-                <li><a href="postimage.html">Post Image</a></li>
-                <li><a href="viewpost.html">View Post</a></li>
+                <a href="index.html">Home</a></li>
+                <a href="login.html">Login</a></li>
+                <a href="registration.html">Registration</a></li>
+                <a href="postimage.html">Post Image</a></li>
+                <a href="viewpost.html">View Post</a></li>
             </ul>
             </nav>
         </header>
 
         <form>
-            <label for="username">Username</label>
-            <input type="text" name="username" 
-            id="username">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input class="input-text" type="text" name="username" 
+                id="username">
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" name="password"
-             id="Password">
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input class="input-text" type="password" name="password"
+                id="Password">
+            </div>
 
-             <input type="submit" value="Submit">
+             <input class="button" type="submit" value="Submit">
 
         </form>
 
