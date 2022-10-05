@@ -34,7 +34,7 @@ a {
 }
 
 p {
-  margin: 30px;
+  margin: 20px;
 }
 
 header {
@@ -64,6 +64,7 @@ footer {
   margin: 0 auto;
   border-radius: .35em;
   padding: 8px;
+  border-color: #1b692c;
 }
 
 .button {
@@ -73,7 +74,7 @@ footer {
   border: none;
   padding: 6px;
   border-radius: .35em;
-  margin: 0 10px;
+  margin: 10px;
   box-shadow: 0 6px gray;
   display: inline-block;
   outline: none;
@@ -96,4 +97,8 @@ footer {
   text-decoration: none;
   padding: 8px 12px;
   border-radius: .35em
+}
+
+.file-upload {
+  background-color: #98c492;
 }
