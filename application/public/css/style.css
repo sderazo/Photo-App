@@ -1,12 +1,49 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Console", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font: 15px "Lucida Console", Helvetica, Arial, sans-serif;
   text-align: center;
   background-color: rgb(206, 249, 203);
 }
 
+main {
+  padding: 150px;
+  margin: 32px;
+}
+
+nav{
+  text-align: center;
+  padding: 0 0 20px;
+}
+
+form {
+  padding: 50px;
+  margin: 80px 50px 140px;
+}
+
+img {
+  padding: 30px;
+  background-color: #98c492;
+
+}
+
 a {
   color: #1b692c;
+}
+
+p {
+  margin: 30px;
+}
+
+header {
+  padding: 15px;
+  background-color: #98c492;
+}
+
+footer {
+  padding: 30px 30px;
+  background-color: #98c492;
+
 }
 
 .input-group {
@@ -40,5 +77,11 @@ a {
 
 .button:active {
   background-color: #577b53;
+}
 
+.nav-items {
+  background-color: rgb(206, 249, 203);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: .35em
 }
