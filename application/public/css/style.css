@@ -71,10 +71,12 @@ footer {
   font-size: 20px;
   background-color: #98c492;
   border: none;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
   padding: 6px;
   border-radius: .35em;
   margin: 0 10px;
+  box-shadow: 0 6px gray;
+  display: inline-block;
+  outline: none;
 
 }
 
@@ -85,6 +87,8 @@ footer {
 
 .button:active {
   background-color: #577b53;
+  box-shadow: 0 6px rgb(194, 194, 194);
+  transform: translateY(3px);
 }
 
 .nav-items {
