@@ -102,3 +102,11 @@ footer {
 .file-upload {
   background-color: #98c492;
 }
+
+.valid-text {
+  outline: solid green;
+}
+
+.invalid-text {
+  outline: solid red;
+}
