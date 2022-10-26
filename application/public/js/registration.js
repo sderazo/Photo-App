@@ -3,18 +3,28 @@
 document.getElementById('username').addEventListener('input', 
 function(ev) {
     let alpha = /^[A-Za-z]+$/;
+    //let specialChar = /[\/\*\-\+\!\@\#\$\^\&\~\[\]]/;
+    let specialChar = /[/*-+!@#$^&~[\]]/;
     let usernameElement = ev.target;
     let username = usernameElement.value;
-    if(username.length > 3 && (username.charAt(0).match(alpha))) {
+    if(username.length > 3 && (username.charAt(0).match(alpha)) && !(username.match(specialChar))) {
+        // for loop to iterate through each char in username starting with second char
         usernameElement.classList.add('valid-text');
         usernameElement.classList.remove('invalid-text');
         usernameElement.setCustomValidity("");
         return true;
+            
+        //if username.charAt(i) == specialChar
+            //
+        //usernameElement.classList.add('valid-text');
+        //usernameElement.classList.remove('invalid-text');
+        //usernameElement.setCustomValidity("");
+        //return true;
     }
-    else{
+     else{
         usernameElement.classList.add('invalid-text');
         usernameElement.classList.remove('valid-text');
-        usernameElement.setCustomValidity("Enter a username that begins with a character and is 3 or more alphanumeric characters in length")
+        usernameElement.setCustomValidity("Enter a username that begins with a character and is 3 or more alphanumeric characters in length");
         return false;
     }
 });
@@ -32,8 +42,8 @@ function pW(et) {
     let passwordElement = et.target;
     let password = passwordElement.value;
     // if password length is >= 8 AND has at least 1 upperCase AND 1 num AND 1 of specChar
-    if(password.length > 8 && (password.match(upperCase && num && specChar))) {
     // / * - + ! @ # $ ^ & ~ [ ]
+    if(password.length > 8 && (password.match(upperCase && num && specChar))) {
         //show that text is valid
         passwordElement.classList.add('valid-text');
         passwordElement.classList.remove('invalid-text');  
@@ -58,8 +68,6 @@ function pW(ev) {
     let confirmpassword = confirmpasswordElement.value;
 
     let password = document.getElementById('password').value;
-    //let valid = document.getElementById('submit').addEventListener('click');
-    //let confirmpassword = document.getElementById('confirmpassword').value;
     // if confirmpassword == password
     if (confirmpassword == password) {
         // display a green border
@@ -67,20 +75,13 @@ function pW(ev) {
         confirmpasswordElement.classList.remove('invalid-text'); 
         confirmpasswordElement.setCustomValidity("");
         return true;
-        //return true;
     }
     else {
         // display a red border around confirm password
-        // pop up box idea: Passwords do not match
         confirmpasswordElement.classList.add('invalid-text');
         confirmpasswordElement.classList.remove('valid-text'); 
-        //return false;
         confirmpasswordElement.setCustomValidity("Passwords do not match");
         return false;
     }
 
 } );
-
-//document.getElementById('submit').addEventListener('click', 
-// write a function
-// function check
