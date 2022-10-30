@@ -3,7 +3,7 @@ function buildCardsUsingDOMAPI(container, data) {
     cardDiv.setAttribute("class", "product-card"); //set class HTML attribute 
 
     let imgDiv = document.createElement("img"); //create img element
-    imgDiv.setAttribute("src", data.thumbnail); //set src HTML attribute
+    imgDiv.setAttribute("src", data.thumbnailUrl); //set src HTML attribute
     imgDiv.setAttribute("class", "prod-img"); //set class HTML attribute
 
     let infoDiv = document.createElement("div"); //create div element
@@ -13,11 +13,6 @@ function buildCardsUsingDOMAPI(container, data) {
     titleP.setAttribute("class", "prod-title"); //set class HTML attribute
     titleP.appendChild(document.createTextNode(data.title)); //adding a text node to the p tag
 
-    //let costP = document.createElement("p");//create p element
-    //titleP.setAttribute("class", "prod-title"); //set class HTML attribute
-    //costP.setAttribute("class", "prod-cost"); //set class HTML attribute
-    //titleP.appendChild(document.createTextNode(data.title)); //adding a text node to the p tag
-    //costP.appendChild(document.createTextNode(data.price)); //adding a text node to the p tag
     infoDiv.appendChild(titleP);
     cardDiv.appendChild(imgDiv);
     cardDiv.appendChild(infoDiv);
@@ -58,13 +53,6 @@ function fetchPhotos() {
             console.log(photo.title);
         });
         
-       /*
-        for(let photo in data) {
-            buildCardsUsingDOMAPI(containerFragment, data[photo]);
-            console.log(photo.url);
-            console.log(photo.title);
-        }
-        */
         //add the container fragment to DOM(the product-list div)
         containerDiv.appendChild(containerFragment);
 
