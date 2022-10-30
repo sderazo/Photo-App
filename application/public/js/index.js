@@ -13,36 +13,66 @@ function buildCardsUsingDOMAPI(container, data) {
     titleP.setAttribute("class", "prod-title"); //set class HTML attribute
     titleP.appendChild(document.createTextNode(data.title)); //adding a text node to the p tag
 
-    let costP = document.createElement("p");//create p element
+    //let costP = document.createElement("p");//create p element
     //titleP.setAttribute("class", "prod-title"); //set class HTML attribute
-    costP.setAttribute("class", "prod-cost"); //set class HTML attribute
+    //costP.setAttribute("class", "prod-cost"); //set class HTML attribute
     //titleP.appendChild(document.createTextNode(data.title)); //adding a text node to the p tag
-    costP.appendChild(document.createTextNode(data.price)); //adding a text node to the p tag
+    //costP.appendChild(document.createTextNode(data.price)); //adding a text node to the p tag
+    infoDiv.appendChild(titleP);
+    cardDiv.appendChild(imgDiv);
+    cardDiv.appendChild(infoDiv);
+    container.appendChild(cardDiv);
 }
 
 
 
 function fetchPhotos() {
     // where we will get products from
-    //var url = "https://jsonplaceholder.typicode.com/albums/2/photos";
-    fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
-      .then(function(response) { 
-        //extract the body from response object.
-        return response.json();
-      })
-      .then(function(data) {
-        //get the array of products from data json object
-        let products = data.albums;
-        //get product-list div
+    //var url = 'https://jsonplaceholder.typicode.com/albums/2/photos';
+    fetch('https://jsonplaceholder.typicode.com/albums/2/photos')
+      .then(response => response.json())
+      //.then(data => console.log(data))
+
+      //data = Array.from(data)
+      
+      
+      .then((data) => {
+        //let data = data.albums
+
+        console.log(data)
+
         let containerDiv = document.getElementById("product-list");
-        //create a document Fragment (https://developer.mozilla.org/en-US/docs/Web/API/Document/createDocumentFragment)
+
+        //get array of products from data json object
+        //let data = Array.from(data)
+        //let products = data;
+
         let containerFragment = document.createDocumentFragment();
-        //for each product , build a card HTML element
-        data.forEach(function(photo) {
-          buildCardsUsingDOMAPI(containerFragment, photo);
+
+        // iterate through json
+        
+        data.forEach((photo) => {
+            buildCardsUsingDOMAPI(containerFragment, photo);
+
+            console.log(photo.url);
+            console.log(photo.title);
         });
+        
+       /*
+        for(let photo in data) {
+            buildCardsUsingDOMAPI(containerFragment, data[photo]);
+            console.log(photo.url);
+            console.log(photo.title);
+        }
+        */
         //add the container fragment to DOM(the product-list div)
         containerDiv.appendChild(containerFragment);
+
+        //console.log(data)
+
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
