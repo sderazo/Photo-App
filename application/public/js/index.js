@@ -1,5 +1,14 @@
 function buildCardsUsingDOMAPI(container, data) {
     let cardDiv = document.createElement("div"); //create div element
+   
+    cardDiv.addEventListener('click', function(ev) {
+        console.log(ev.currentTarget.remove());
+
+        let containerDiv = document.getElementById("product-list");
+        let decrement = containerDiv.childElementCount
+        console.log(decrement)
+    })
+   
     cardDiv.setAttribute("class", "product-card"); //set class HTML attribute 
 
     let imgDiv = document.createElement("img"); //create img element
@@ -22,29 +31,19 @@ function buildCardsUsingDOMAPI(container, data) {
 
 
 function fetchPhotos() {
-    // where we will get products from
-    //var url = 'https://jsonplaceholder.typicode.com/albums/2/photos';
     fetch('https://jsonplaceholder.typicode.com/albums/2/photos')
       .then(response => response.json())
-      //.then(data => console.log(data))
 
-      //data = Array.from(data)
-      
-      
       .then((data) => {
-        //let data = data.albums
-
         console.log(data)
 
         let containerDiv = document.getElementById("product-list");
 
-        //get array of products from data json object
-        //let data = Array.from(data)
-        //let products = data;
-
         let containerFragment = document.createDocumentFragment();
 
-        // iterate through json
+        // get length of array
+        let length = data.length
+        console.log(length)
         
         data.forEach((photo) => {
             buildCardsUsingDOMAPI(containerFragment, photo);
@@ -55,8 +54,6 @@ function fetchPhotos() {
         
         //add the container fragment to DOM(the product-list div)
         containerDiv.appendChild(containerFragment);
-
-        //console.log(data)
 
       })
       .catch((error) => {
