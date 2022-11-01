@@ -1,15 +1,72 @@
 function buildCardsUsingDOMAPI(container, data) {
     let cardDiv = document.createElement("div"); //create div element
-   
-    cardDiv.addEventListener('click', function(ev) {
-        console.log(ev.currentTarget.remove());
+    cardDiv.setAttribute("class", "product-card"); //set class HTML attribute 
 
+
+
+
+        //fade out card
+        //function fadeOut() { }
+        //
+    function fadeOut() {
+        var fadeTarget = cardDiv;
+        var fadeEffect = setInterval(function() {
+        
+            if(!fadeTarget.style.opacity) {
+                fadeTarget.style.opacity = 1;
+            }
+            if(fadeTarget.style.opacity > 0) {
+                fadeTarget.style.opacity -= 0.1;
+            }
+            else {
+                clearInterval(fadeEffect);
+                fadeTarget.remove();
+            }
+
+        //remove card
+        //ev.currentTarget.remove()
+        }, 200);
+    }
+    cardDiv.addEventListener('click', fadeOut);
+
+    /*
+    function fadeOut() {
+        //either product-list or product-card
+        //works with product-list, one big one
+        var fadeTarget = document.getElementById("product-card");
+        var fadeEffect = setInterval(function () {
+               if(!fadeTarget.style.opacity) {
+                     fadeTarget.style.opacity = 1;
+               }
+               if(fadeTarget.style.opacity > 0) {
+                      fadeTarget.style.opacity -= 0.1;
+               }
+               else {
+                       clearInterval(fadeEffect);
+                       fadeTarget.remove();
+               }
+
+         }, 200);
+        //document.getElementById("product-card").addEventListener('click', fadeOut);
+
+
+        
+        //old code
+        //console.log(ev.currentTarget.remove());
+        console.log(cardDiv.remove());
+
+        // decrement num of photo cards after each click
         let containerDiv = document.getElementById("product-list");
         let decrement = containerDiv.childElementCount
         console.log(decrement)
-    })
-   
-    cardDiv.setAttribute("class", "product-card"); //set class HTML attribute 
+        
+    }
+    */
+     
+
+    //document.getElementById("product-card").addEventListener('click', fadeOut);
+    //place this statement before the function
+    //cardDiv.setAttribute("class", "product-card"); //set class HTML attribute 
 
     let imgDiv = document.createElement("img"); //create img element
     imgDiv.setAttribute("src", data.thumbnailUrl); //set src HTML attribute
@@ -30,6 +87,28 @@ function buildCardsUsingDOMAPI(container, data) {
 
 
 
+/*
+function fadeOut() {
+    //either product-list or product-card
+    var fadeTarget = document.getElementById("product-card");
+    var fadeEffect = setInterval(function () {
+           if(!fadeTarget.style.opacity) {
+                 fadeTarget.style.opacity = 1;
+           }
+           if(fadeTarget.style.opacity > 0) {
+                  fadeTarget.style.opacity -= 0.1;
+           }
+           else {
+                   clearInterval(fadeEffect);
+                   fadeTarget.remove();
+           }
+
+     }, 200);
+}
+
+//document.getElementById("product-card").addEventListener('click', fadeOut);
+*/
+
 function fetchPhotos() {
     fetch('https://jsonplaceholder.typicode.com/albums/2/photos')
       .then(response => response.json())
@@ -41,15 +120,15 @@ function fetchPhotos() {
 
         let containerFragment = document.createDocumentFragment();
 
-        // get length of array
+        //get length of array
         let length = data.length
         console.log(length)
         
         data.forEach((photo) => {
             buildCardsUsingDOMAPI(containerFragment, photo);
 
-            console.log(photo.url);
-            console.log(photo.title);
+            //console.log(photo.url);
+            //console.log(photo.title);
         });
         
         //add the container fragment to DOM(the product-list div)

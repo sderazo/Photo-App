@@ -177,3 +177,11 @@ footer {
   margin: 0;
   background-color: transparent;
 }
+
+
+
+.counter {
+  margin: 0;
+  background-color: transparent;
+  flex: 1 75%;
+}
