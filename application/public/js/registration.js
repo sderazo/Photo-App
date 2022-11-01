@@ -14,12 +14,6 @@ function(ev) {
         usernameElement.setCustomValidity("");
         return true;
             
-        //if username.charAt(i) == specialChar
-            //
-        //usernameElement.classList.add('valid-text');
-        //usernameElement.classList.remove('invalid-text');
-        //usernameElement.setCustomValidity("");
-        //return true;
     }
      else{
         usernameElement.classList.add('invalid-text');
