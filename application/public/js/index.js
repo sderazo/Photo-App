@@ -17,7 +17,8 @@ function buildCardsUsingDOMAPI(container, data) {
                 fadeTarget.remove();
                 // decrement num of photo cards after each click
                 let containerDiv = document.getElementById("product-list");
-                let decrement = containerDiv.childElementCount
+                let decrement = containerDiv.childElementCount;
+                document.getElementById("counter").innerHTML = decrement;
                 console.log(decrement)
             }
 
@@ -59,6 +60,7 @@ function fetchPhotos() {
 
         //get length of array
         let length = data.length
+        document.getElementById("counter").innerHTML = length;
         console.log(length)
         
         data.forEach((photo) => {
