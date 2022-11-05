@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Registration</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <script defer type="text/javascript" src="../js/registration.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <section>
+                <h1>Registration</h1>
+            </section>
+    
+            <nav>
+                <a class="nav-items" href="index.html">Home</a>
+                <a class="nav-items" href="login.html">Login</a>
+                <a class="nav-items" href="registration.html">Registration</a>
+                <a class="nav-items" href="postimage.html">Post Image</a>
+                <a class="nav-items" href="viewpost.html">View Post</a>
+            </nav>
+        </header>
+        
+        <form>
+            <p class="input-group">
+                <label for="username">Username</label>
+                <input class="input-text" type="text" name="username" 
+                id="username">
+    
+                <label for="email">Email</label>
+                <input class="input-text" type="email" name="email"
+                id="email">
+            </p>
+
+            <p class="input-group">
+                <label for="password">Password</label>
+                <input class="input-text" type="password" name="password"
+                 id="password">
+    
+                <label for="confirmpassword">Confirm Password</label>
+                <input class="input-text" type="password" name="confirmpassword"
+                 id="confirmpassword">
+            </p>
+
+            <p>
+                <input type="checkbox" name="agecheck"
+                id="agecheck" required>
+                <label for="agecheck">I am 13+ years of age</label>
+            </p>
+
+            <p>
+                <input type="checkbox" name="tosprivacyrules"
+                id="tosprivacyrules" required>
+                <a href="">I accept the TOS and Privacy Rules</a>
+            </p>
+
+            <p>
+                <input class="button" type="submit" value="Submit" id="submit">
+            </p>
+
+        </form>
+
+        <footer>Sabrina Diaz-Erazo &copy; 2022</footer>
+    </body>
+</html>
