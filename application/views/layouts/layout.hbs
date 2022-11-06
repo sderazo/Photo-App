@@ -4,6 +4,9 @@
     <title>{{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
     <link rel="stylesheet" href="/public/css/style.css">
+    {{#each js}} 
+      <script defer src="/public/js/{{this}}"></script>
+    {{/each}}
   </head>
   <body>
     {{> header}}
