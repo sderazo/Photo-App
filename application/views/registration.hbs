@@ -1,4 +1,6 @@
-<form>
+<form method="POST"
+      action="/users/register"
+      enctype="application/x-www-form-urlencoded">
     <p class="input-group">
         <label for="username">Username</label>
         <input class="input-text" type="text" name="username" 
@@ -15,7 +17,7 @@
          id="password">
     
         <label for="confirmpassword">Confirm Password</label>
-        <input class="input-text" type="password" name="confirmpassword"
+        <input class="input-text" type="password" name="cpassword"
         id="confirmpassword">
     </p>
 
