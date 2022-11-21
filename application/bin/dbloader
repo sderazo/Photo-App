@@ -25,7 +25,7 @@ async function getConnection() {
 async function makeDatabase(connection) {
   //TODO make sure to change yourdbnamehere
   const [result, _] = await connection.query(
-    "CREATE DATABASE IF NOT EXISTS yourdbnamehere;"
+    "CREATE DATABASE IF NOT EXISTS csc317db;"
   );
   if (result && result.warningStatus > 0) {
     const [warningResult, _] = await connection.query("SHOW WARNINGS");
@@ -133,7 +133,7 @@ async function makeCommentsTable(connection) {
     connection = await getConnection();
     await makeDatabase(connection); // make DB
     //TODO make sure to change yourdbnamehere
-    await connection.query("USE yourdbnamehere"); // set new DB to the current DB
+    await connection.query("USE csc317db"); // set new DB to the current DB
     await makeUsersTable(connection); // try to make user table
     await makePostsTable(connection); // try to make posts table
     await makeCommentsTable(connection); // try to make comments table

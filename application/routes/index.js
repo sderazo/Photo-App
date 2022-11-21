@@ -10,8 +10,9 @@ router.get("/login", function(req, res) {
   res.render('login');
 });
 
+// turn off registration validation to work on milestone3
 router.get("/register", function(req, res) {
-  res.render('registration', {js:["registration.js"]});
+  res.render('registration', { /*js:["registration.js"]*/});
 });
 
 router.get("/postimage", function(req, res) {
