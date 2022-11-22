@@ -40,7 +40,19 @@ router.post("/register", function(req, res, next) {
 
 //Method: POST
 //localhost:3000/users/login
-router.post("/login", function(req, res) {
+router.post("/login", function(req, res, next) {
+  const {username, password} = req.body;
+  db.query('select id, username, email from users where username=? AND password=?', [username, password])
+  .then(function([results, fields]){
+    if(results && results.length == 1){
+      res.redirect('/');
+    }else{
+      throw new Error('Invalid user credentials');
+    }
+  })
+  .catch(function(err){
+    next(err);
+  })
 
 
 });
