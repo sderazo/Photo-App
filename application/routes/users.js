@@ -46,9 +46,17 @@ router.post("/register", function(req, res, next) {
 //localhost:3000/users/login
 router.post("/login", function(req, res, next) {
   const {username, password} = req.body;
-  db.query('select id, username, email from users where username=? AND password=?', [username, password])
+  db.query('select id, username, password from users where username=?', [username])
   .then(function([results, fields]){
     if(results && results.length == 1){
+      let dbPassword = results[0].password;
+      return bcrypt.compare(password, dbPassword);
+    }else{
+      throw new Error('Invalid user credentials');
+    }
+  })
+  .then(function(passwordsMatched){
+    if(passwordsMatched){
       res.redirect('/');
     }else{
       throw new Error('Invalid user credentials');
