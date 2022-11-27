@@ -9,6 +9,9 @@
     {{/each}}
   </head>
   <body>
+    {{#if (nonEmptyObject messages)}}
+      {{> flashmessage}}
+    {{/if}}
     {{> header}}
     {{> nav}}
     {{{body}}}
