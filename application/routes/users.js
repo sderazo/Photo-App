@@ -3,6 +3,7 @@ var router = express.Router();
 const bcrypt = require('bcrypt');
 const UserError = require('../helpers/error/UserError');
 const db = require('../conf/database');
+
 //Method: POST
 //localhost:3000/users/register
 router.post("/register", function(req, res, next) {
@@ -15,13 +16,13 @@ router.post("/register", function(req, res, next) {
       if(results && results.length == 0){
         return db.query('select id from users where email=?', [email])
       }else{
-        throw new Error('username already exists');
+        throw new UserError('username already exists', "/register", 200);
       }
     }).then(function([results, fields]) {
       if(results && results.length == 0){
         return bcrypt.hash(password,2);
       }else{
-        throw new Error('email already exists');
+        throw new UserError('email already exists', "/register", 200);
       }
     }).then(function(hashedPassword){
       return db.execute('insert into users (username, email, password) value (?,?,?)', [username, email, hashedPassword])
@@ -30,7 +31,7 @@ router.post("/register", function(req, res, next) {
       if(results && results.affectedRows == 1){
         res.redirect('/login');
       }else{
-        throw new Error('user could not be made');
+        throw new UserError('user could not be made', "/register", 200);
       }
     }).catch(function(err){
       res.redirect('/register');
