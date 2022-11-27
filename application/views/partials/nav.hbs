@@ -1,7 +1,13 @@
+{{log this}}
 <nav> 
     <a class="nav-items" href="/">Home</a>
-    <a class="nav-items" href="/login">Login</a>
     <a class="nav-items" href="/register">Registration</a>
     <a class="nav-items" href="/postimage">Post Image</a>
     <a class="nav-items" href="/posts/:id">View Post</a>
+
+    {{#if isLoggedIn}}
+        <a id="logout-button" class="nav-items">Log Out</a>
+    {{else}}
+        <a class="nav-items" href="/login">Login</a>
+    {{/if}}
 </nav>
