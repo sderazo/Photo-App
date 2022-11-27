@@ -3,7 +3,11 @@ module.exports = {
         if(req.session.username){
             next();
         }else{
-            res.redirect('/login');
+            req.flash("error", "You must be logged in to post");
+            req.session.save(function(saveError){
+                res.redirect('/login');
+            });
+            
         }
     }
 }

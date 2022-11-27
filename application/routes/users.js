@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const bcrypt = require('bcrypt');
+const UserError = require('../helpers/error/UserError');
 const db = require('../conf/database');
 //Method: POST
 //localhost:3000/users/register
@@ -58,23 +59,31 @@ router.post("/login", function(req, res, next) {
       let dbPassword = results[0].password;
       return bcrypt.compare(password, dbPassword);
     }else{
-      throw new Error('Invalid user credentials');
+      throw new UserError('Failed Login: Invalid user credentials', "/login", 200);
     }
   })
   .then(function(passwordsMatched){
     if(passwordsMatched){
       req.session.userId = loggedUserId;
       req.session.username = loggedUsername;
-      res.redirect('/');
+      req.flash("success", `Hi ${loggedUsername}, you are now logged in.`);
+      req.session.save(function(saveErr){
+        res.redirect('/');
+      })
     }else{
-      throw new Error('Invalid user credentials');
+      throw new UserError('Failed Login: Invalid user credentials', "/login", 200);
     }
   })
   .catch(function(err){
-    next(err);
+    if(err instanceof UserError){
+      req.flash("error", err.getMessage());
+      req.session.save(function(saveErr){
+        res.redirect(err.getRedirectURL());
+      })
+    }else{
+      next(err);
+    }
   })
-
-
 });
 
 router.post("/logout", function(req, res, next){
