@@ -64,6 +64,16 @@ app.use(function(req,res,next){
   next();
 })
 
+//match register to login
+app.use(function(req,res,next){
+  console.log(req.session);
+  if(req.session.username){
+    res.locals.isRegistered = true;
+    res.locals.username = req.session.username;
+  }
+  next();
+})
+
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
 
