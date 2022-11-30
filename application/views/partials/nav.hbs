@@ -10,4 +10,10 @@
     {{else}}
         <a class="nav-items" href="/login">Login</a>
     {{/if}}
+
+    {{#if isRegistered}}
+        <a class="nav-items" href="/login">Login</a>
+    {{else}}
+        <a class="nav-items" href="/register">Registration</a>
+    {{/if}}
 </nav>
