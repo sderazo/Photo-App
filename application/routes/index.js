@@ -1,8 +1,5 @@
 var express = require('express');
 const {isLoggedIn} = require('../middleware/protectors');
-//make it similar to login
-const {isRegistered} = require('../middleware/protectors');
-
 var router = express.Router();
 
 /* GET home page. */
@@ -15,8 +12,7 @@ router.get("/login", function(req, res) {
 });
 
 // turn off registration validation to work on milestone3
-// added isRegistered
-router.get("/register", isRegistered, function(req, res) {
+router.get("/register", function(req, res) {
   res.render('registration', { /*js:["registration.js"]*/});
 });
 

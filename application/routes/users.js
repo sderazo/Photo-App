@@ -9,62 +9,39 @@ const db = require('../conf/database');
 router.post("/register", function(req, res, next) {
   const {username, email, password} = req.body;
 
-  //mirroring what login has
-  let registerUserId;
-  let registerUsername;
-
   //server side validation
   //check for duplicates
   db.query('select id from users where username=?', [username])
     .then(function([results, fields]){
       if(results && results.length == 0){
-        //mirroring what login has
-        registerUserId = results[0].id;
-        registerUsername = results[0].username;
-
         return db.query('select id from users where email=?', [email])
       }else{
-        throw new UserError('username already exists', "/register", 200);
+        throw new Error('username already exists');
       }
     }).then(function([results, fields]) {
       if(results && results.length == 0){
         return bcrypt.hash(password,2);
       }else{
-        throw new UserError('email already exists', "/register", 200);
+        throw new Error('email already exists');
       }
     }).then(function(hashedPassword){
       return db.execute('insert into users (username, email, password) value (?,?,?)', [username, email, hashedPassword])
     })
     .then(function([results, fields]) {
       if(results && results.affectedRows == 1){
-
-        // make successful flash message right here
-        req.session.userId = registerUserId;
-        req.session.username = registerUsername;
-        req.flash("success", `Hi ${registerUsername}, you are now registered.`);
-        //place redirect in function like login
-        req.session.save(function(saveErr){
-          res.redirect('/login');
-        })
-          //res.redirect('/login');
+        res.redirect('/login');
       }else{
-        throw new UserError('user could not be made', "/register", 200);
+        throw new Error('user could not be made');
       }
     }).catch(function(err){
-        if(err instanceof UserError){
-          req.flash("error", err.getMessage());
-          req.session.save(function(saveErr){
-            res.redirect(err.getRedirectURL());
-          })
-        }else{
-          next(err);
-        }
-
-      //res.redirect('/register');
-      //next(err);
-    })
+      res.redirect('/register');
+      next(err);
+    });
   //insert into db
   //respond
+
+
+
 });
 
 //Method: POST

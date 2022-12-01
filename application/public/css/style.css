@@ -94,10 +94,6 @@ footer {
 
 }
 
-.logout-button {
-  cursor: pointer;
-}
-
 .button:hover {
   cursor: pointer;
   background-color: #6f996a;
