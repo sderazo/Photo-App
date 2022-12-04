@@ -1,4 +1,6 @@
-<form>
+<form  action="/posts/create"
+       method="post"
+       enctype="multipart/form-data">
     <div class="input-group">
         <label for="title">Title</label>
         <input class="input-text" type="text" name="title" 
@@ -13,7 +15,7 @@
 
      <p>
         <label for="image">Image</label>
-         <input class="file-upload" type="file" name="image" 
+         <input class="file-upload" type="file" name="uploadImage" 
         id="image">
     </p>
 
