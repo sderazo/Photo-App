@@ -11,7 +11,7 @@ html {
 
 body {
   padding: 0;
-  width: 90%;
+
   margin: auto;
   font: 20px "Lucida Console", Helvetica, Arial, sans-serif;
   text-align: center;
@@ -180,9 +180,32 @@ footer {
 }
 
 
-
 .counter {
   margin: 0;
   background-color: transparent;
   flex: 1 75%;
+}
+
+#logout-button {
+  cursor: pointer;
+}
+
+
+
+.alert {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;  
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-success{
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
 }

@@ -1,3 +1,10 @@
 <main id="main-content">
-    {{log this}}
+    {{#each results}}
+        <div>
+            <img src="{{this.thumbnail}}" alt="">
+            <p>{{this.title}}</p>
+            <p>{{this.description}}</p>
+            <a href="/posts/{{this.id}}">Details</a>
+        </div>
+    {{/each}}
 </main>
