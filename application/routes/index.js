@@ -24,7 +24,7 @@ router.get("/postimage", isLoggedIn, function(req, res) {
 
 // what to write for viewpost for now
 router.get("/posts/:id", function(req, res) {
-  res.render('viewpost');
+  res.render('viewpost',{js:["viewpost.js"]});
 });
 
 module.exports = router;
