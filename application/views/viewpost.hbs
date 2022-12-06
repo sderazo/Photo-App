@@ -1,9 +1,11 @@
+{{log this}}
 <section>
-    <p>Title: "Hugo"</p>
-    <p>Author: Sabrina Diaz-Erazo</p>
+    <h2>{{currentPost.title}}</h2>
+    <p>{{currentPost.description}}</p>
+    <p>{{currentPost.username}}</p>
 
-    <img src="/public/images/hugo440.jpg" alt="Hugo the Cat">
+    <img src="/{{currentPost.image}}" />
 
-    <p>Date Posted: 10/2/22</p>
+    <p>{{formatDate currentPost.createdAt}}</p>
 </section>
     

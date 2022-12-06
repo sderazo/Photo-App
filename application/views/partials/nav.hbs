@@ -3,11 +3,17 @@
     <a class="nav-items" href="/">Home</a>
     <a class="nav-items" href="/register">Registration</a>
     <a class="nav-items" href="/postimage">Post Image</a>
-    <a class="nav-items" href="/posts/:id">View Post</a>
-
+    
     {{#if isLoggedIn}}
         <a id="logout-button" class="nav-items">Log Out</a>
     {{else}}
         <a class="nav-items" href="/login">Login</a>
     {{/if}}
+
+    <li class="search-bar">
+        <form>
+            <input id="search-text" class="search-text" name="search-text" type="text" />
+            <div class="search-button fas fa-search"></div>
+        </form>
+    </li>
 </nav>

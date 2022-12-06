@@ -12,7 +12,20 @@ module.exports = {
     },
 
     getPostById: function (req, res, next) {
-
+        let postId = req.params.id;
+        let baseSQL = `SELECT p.title, p.description, p.image, p.createdAt, u.username
+        FROM posts p
+        JOIN users u
+        ON p.fk_authorId=u.id
+        WHERE p.id=?;`;
+        // make sure to do a catch error statement
+        db.query(baseSQL, [postId])
+            .then(function([results,fields]){
+                if(results && results.length == 1){
+                    res.locals.currentPost = results[0];
+                }
+                next();
+            })
     },
-    
+
 };

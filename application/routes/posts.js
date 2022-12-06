@@ -44,6 +44,12 @@ router.post("/create", upload.single("uploadImage") , function(req,res,next){
         })
         .catch(err => next(err));
 
+});
+
+//localhost:3000/posts/search
+router.get("/search", function(req,res,next){
+    console.log(req.query);
+    res.render('index');
 })
 
 module.exports = router;
