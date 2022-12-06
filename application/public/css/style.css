@@ -37,6 +37,11 @@ form {
   margin: 130px 80px;
 }
 
+.form-style{
+  padding: 0px;
+  margin: 130px 80px;
+}
+
 img {
   padding: 30px;
   background-color: #98c492;
@@ -103,6 +108,19 @@ footer {
   background-color: #577b53;
   box-shadow: 0 6px rgb(194, 194, 194);
   transform: translateY(3px);
+}
+
+.search-button {
+  font-family: "Lucida console";
+  font-size: 20px;
+  background-color: #577b53;
+  border: none;
+  padding: 6px;
+  border-radius: .35em;
+  display: inline-block;
+  outline: none;
+  height: 48px;
+  width: 48px;
 }
 
 .nav-items {
