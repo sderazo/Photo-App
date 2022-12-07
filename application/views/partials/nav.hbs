@@ -11,9 +11,11 @@
     {{/if}}
 
     <li>
-        <form>
+        <form method="GET"
+            action="/posts/search"
+            enctype="application/x-www-form-urlencoded">
             <input id="search-text" class="search-text" name="search-text" type="text" />
-            <div class="search-button"></div>
+            <button type="submit" class="search-button"></button>
         </form>
     </li>
 </nav>
