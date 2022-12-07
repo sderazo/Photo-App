@@ -114,7 +114,20 @@ footer {
   border-radius: .35em;
   display: inline-block;
   outline: none;
-  height: 48px;
+  height: 21px;
+  width: 48px;
+}
+
+#comment-button {
+  font-family: "Lucida console";
+  font-size: 20px;
+  background-color: #577b53;
+  border: none;
+  padding: 6px;
+  border-radius: .35em;
+  display: inline-block;
+  outline: none;
+  height: 37px;
   width: 48px;
 }
 
