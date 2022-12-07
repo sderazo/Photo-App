@@ -47,9 +47,23 @@ router.post("/create", upload.single("uploadImage") , function(req,res,next){
 });
 
 //localhost:3000/posts/search
+//add check error part
 router.get("/search", function(req,res,next){
-    console.log(req.query);
-    res.render('index');
-})
+    let searchTerm = `%${req.query.searchTerm}%`;
+    let originalSearchTerm = req.query.searchTerm;
+    let baseSQL = `select 
+    id, title, description, thumbnail, concat_ws(" ", title,description) as haystack
+    FROM posts
+    HAVING haystack like ?;`;
+    db.execute(baseSQL, [searchTerm])
+      .then(function([results,fields]){
+        res.locals.results = results;
+        res.locals.searchValue = originalSearchTerm;
+        req.flash("success", `${results.length} results found`);
+        req.session.save(function(saveErr){
+            res.render('index');
+        })
+      })
+});
 
 module.exports = router;
