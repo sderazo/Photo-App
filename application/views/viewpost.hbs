@@ -13,6 +13,11 @@
             <textarea id="comment-text" class="comment-box-text"></textarea>
             <i id="comment-button" data-postid="{{currentPost.id}}" class="fa fa-comment comment-box-button" aria-hidden="true"></i>
         </div>
+        <div class="comments">
+            {{#each currentPost.comment}}
+                {{> comment this}}
+            {{/each}}
+        </div>
     </div>
 </section>
     
