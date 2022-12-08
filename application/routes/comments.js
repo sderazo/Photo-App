@@ -4,7 +4,7 @@ const db = require('../conf/database');
 
 router.post("/create", function(req,res,next){
     console.log(req.body);
-    res.json(req.json);
+    res.json(req.body);
 })
 
 module.exports = router
