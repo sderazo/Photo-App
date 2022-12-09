@@ -13,7 +13,7 @@
             <textarea id="comment-text" class="comment-box-text"></textarea>
             <i id="comment-button" data-postid="{{currentPost.id}}" class="fa fa-comment comment-box-button" aria-hidden="true"></i>
         </div>
-        <div class="comments">
+        <div id="comment-list" class="comments">
             {{#each currentPost.comments}}
                 {{> comment this}}
             {{/each}}

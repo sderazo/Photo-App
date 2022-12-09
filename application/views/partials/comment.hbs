@@ -1,5 +1,5 @@
-<div id="message-{{id}}">
-    <strong>{{username}}</strong>
-    <p>{{text}}</p>
-    <p>{{formatDate createdAt}}</p>
+<div id="message-{{id}}" class="comment">
+    <strong class="comment-author">{{username}}</strong>
+    <span class="comment-date">{{formatDate createdAt}}</span>
+    <div class="comment-text">{{text}}</div>
 </div>
