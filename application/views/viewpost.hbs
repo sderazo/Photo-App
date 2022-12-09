@@ -14,7 +14,7 @@
             <i id="comment-button" data-postid="{{currentPost.id}}" class="fa fa-comment comment-box-button" aria-hidden="true"></i>
         </div>
         <div class="comments">
-            {{#each currentPost.comment}}
+            {{#each currentPost.comments}}
                 {{> comment this}}
             {{/each}}
         </div>

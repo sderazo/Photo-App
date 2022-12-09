@@ -8,6 +8,8 @@ document.getElementById('comment-button')
         let commentText = commentTextElement.value;
         let postId = ev.currentTarget.dataset.postid;
 
+        if(!commentText) return;
+
         fetch("/comments/create", {
             method: "POST",
             headers: {
