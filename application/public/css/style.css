@@ -50,6 +50,10 @@ p {
   margin: 20px;
 }
 
+.search-group {
+  list-style-type: none;
+}
+
 header {
   padding: 15px;
   background-color: #98c492;
@@ -116,6 +120,7 @@ footer {
   outline: none;
   height: 21px;
   width: 48px;
+  cursor: pointer;
 }
 
 #comment-button {
@@ -129,6 +134,7 @@ footer {
   outline: none;
   height: 37px;
   width: 48px;
+  cursor: pointer;
 }
 
 .nav-items {
