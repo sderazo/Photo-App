@@ -22,7 +22,6 @@ body {
 }
 
 main {
-  padding: 150px;
   margin: 32px;
 }
 
@@ -55,7 +54,7 @@ p {
 }
 
 header {
-  padding: 15px;
+  padding: 1px;
   background-color: #98c492;
 }
 
@@ -247,12 +246,14 @@ footer {
 #main-content {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .child-flex {
-  width: 25%;
+  flex: 1 0 21%;
   box-sizing: border-box;
 }
+
 
 img {
   max-width: 100%;
