@@ -19,7 +19,10 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. npm install
+1. Change the current directory to the application folder in your repository.
+2. Run `npm install`
 
 ## Run Instructions
-1. npm start
+1. Change the current directory to the application folder in your repository.
+2. Run `npm start`
+
