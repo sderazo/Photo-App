@@ -22,7 +22,7 @@ router.get("/postimage", isLoggedIn, function(req, res) {
   res.render('postimage');
 });
 
-// what to write for viewpost for now
+
 router.get("/posts/:id(\\d+)", getPostById, getCommentsForPostById, function(req, res) {
   res.render('viewpost', {js:["viewpost.js"]});
 });

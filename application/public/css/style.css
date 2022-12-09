@@ -253,3 +253,8 @@ footer {
   width: 25%;
   box-sizing: border-box;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
