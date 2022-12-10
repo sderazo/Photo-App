@@ -11,7 +11,6 @@ html {
 
 body {
   padding: 0;
-
   margin: auto;
   font: 20px "Lucida Console", Helvetica, Arial, sans-serif;
   text-align: center;
@@ -117,13 +116,13 @@ footer {
   font-size: 20px;
   background-color: #577b53;
   border: none;
-  padding-top: 11px;
   border-radius: .35em;
   display: inline-block;
   outline: none;
   height: 36px;
-  width: 48px;
+  width: 90px;
   cursor: pointer;
+  color: rgb(206, 249, 203);
 }
 
 #comment-button {
@@ -136,8 +135,9 @@ footer {
   display: inline-block;
   outline: none;
   height: 37px;
-  width: 48px;
+  width: 105px;
   cursor: pointer;
+  color: rgb(206, 249, 203);
 }
 
 .nav-items {
