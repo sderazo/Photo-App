@@ -39,6 +39,8 @@ nav{
 img {
   padding: 30px;
   background-color: #98c492;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 a {
@@ -51,6 +53,8 @@ p {
 
 .search-group {
   list-style-type: none;
+  padding: 27px;
+  padding-bottom: 0px;
 }
 
 header {
@@ -64,6 +68,7 @@ footer {
   position: absolute;
   width: 100%;
   text-align: center;
+  bottom: 0;
 
 }
 
@@ -112,11 +117,11 @@ footer {
   font-size: 20px;
   background-color: #577b53;
   border: none;
-  padding: 6px;
+  padding-top: 11px;
   border-radius: .35em;
   display: inline-block;
   outline: none;
-  height: 21px;
+  height: 36px;
   width: 48px;
   cursor: pointer;
 }
@@ -263,10 +268,21 @@ img {
   padding: 15px;
 }
 
+.comment-box {
+  padding-bottom: 35px;
+}
+
 .comment-box-text {
   width: 236px;
   margin: 0 auto;
   border-radius: .35em;
   padding: 8px;
   border-color: #1b692c;
+}
+
+.search-text {
+  border-radius: .35em;
+  padding: 8px;
+  border-color: #1b692c;
+  width: 60%;
 }

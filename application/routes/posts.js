@@ -65,19 +65,8 @@ router.get("/search", function(req,res,next){
         })
       })
       // show recent posts if type in random stuff
-      /*
-      .then(function(getRecentPosts){
-        if(results && results.length == 0){
-          //res.locals.results = results;
-          //res.locals.searchValue = originalSearchTerm;
-          req.flash("error", `${results.length} results found`);
-          req.session.save(function(saveErr){
-              res.render('index');
-          })
-        }
-      })
       .catch(err => next(err));
-      */
+      
 });
 
 module.exports = router;

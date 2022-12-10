@@ -6,11 +6,6 @@ module.exports = {
             if(results && results.length){
                 res.locals.results = results;
             }
-            // trying to implement results when random is typed
-            else{
-                res.locals.results = results;
-            }
-            // end of trial code
             next();
         })
         .catch(err => next(err));
@@ -31,7 +26,7 @@ module.exports = {
                 }
                 next();
             })
-            //.catch(err => next(err));
+            .catch(err => next(err));
     },
     getCommentsForPostById: function(req,res,next){
         let postId = req.params.id;
