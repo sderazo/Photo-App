@@ -1,7 +1,7 @@
 const db = require('../conf/database');
 module.exports = {
     getRecentPosts: function(req,res,next){
-        db.query('select id, title, description, thumbnail from posts ORDER BY createdAt DESC LIMIT 8')
+        db.query('select id, title, description, thumbnail from posts ORDER BY createdAt DESC LIMIT 12')
         .then(function([results, fields]){
             if(results && results.length){
                 res.locals.results = results;
