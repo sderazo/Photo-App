@@ -136,6 +136,8 @@ footer {
   outline: none;
   height: 37px;
   width: 105px;
+  margin-left: 12px;
+  margin-top: 6px;
   cursor: pointer;
   color: rgb(206, 249, 203);
 }
@@ -214,7 +216,6 @@ footer {
   background-color: transparent;
 }
 
-
 .counter {
   margin: 0;
   background-color: transparent;
@@ -224,8 +225,6 @@ footer {
 #logout-button {
   cursor: pointer;
 }
-
-
 
 .alert {
   padding: 15px;
@@ -245,8 +244,6 @@ footer {
   border-color: #d6e9c6;
 }
 
-
-
 #main-content {
   display: flex;
   flex-wrap: wrap;
@@ -257,7 +254,6 @@ footer {
   flex: 1 0 21%;
   box-sizing: border-box;
 }
-
 
 img {
   max-width: 100%;
@@ -270,6 +266,7 @@ img {
 
 .comment-box {
   padding-bottom: 35px;
+  display: inline-flex;
 }
 
 .comment-box-text {
