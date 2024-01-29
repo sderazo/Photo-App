@@ -9,7 +9,7 @@
 - The search bar allows the user to search for an individual post. The number of results found are indicated by a flash message at the top of the screen.
 - Clicking on the **Details** section allows the user to view the individual post page. Once on the page, the user can comment on the post.
 
-## Video Walkthrough
+## Video Walkthrough:
 Here's a walkthrough of implemented features:
 
 https://www.youtube.com/watch?v=qWkmY2Wqcb8&t=11s
@@ -17,14 +17,14 @@ https://www.youtube.com/watch?v=qWkmY2Wqcb8&t=11s
 
 # Build/Run Instructions
 
-## Build Instructions
+## Build Instructions:
 1. Change the current directory to the **application** folder in your repository.
 2. Run `npm install`
 
-## Run Instructions
+## Run Instructions:
 1. Change the current directory to the **application** folder in your repository.
 2. Run `npm start`
 
-## Link to Web Application
+## Link to Web Application:
 http://localhost:3000/
 
