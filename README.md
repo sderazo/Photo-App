@@ -1,8 +1,13 @@
-# CSC 317 Course Project: Photo Management App
+# CSC 317 Course Project - *Photo Management App*
 
-## Purpose
+**Photo Management App** is a website that allows users to post, search for, view and comment on images. 
 
-The purpose of this repository is to store all the code for your web application. This also includes the history of all commits made and who made them. Only code submitted on the master branch will be graded.
+## Main Features:
+* [x] The **Registration** button allows the user to create a new account.
+* [x] The **Login** button allows the user to log in with their username. A flash message will appear indicating if the user has successfully logged in or not.
+* [x] The **Post Image** button allows the user to create a new post once logged in. Each new post will appear on the **Home** page, followed by a flash message indicating it has been created.
+* [x] The search bar allows the user to search for an individual post. The number of results found are indicated by a flash message at the top of the screen.
+* [x] Clicking on the **Details** section allows the user to view the individual post page. Once on the page, the user can comment on the post.
 
 ## Video Walkthrough
 Here's a walkthrough of implemented features:
@@ -10,16 +15,16 @@ Here's a walkthrough of implemented features:
 https://www.youtube.com/watch?v=qWkmY2Wqcb8&t=11s
 
 
-## Link to Web Application
-http://localhost:3000/
-
 # Build/Run Instructions
 
 ## Build Instructions
-1. Change the current directory to the application folder in your repository.
+1. Change the current directory to the **application** folder in your repository.
 2. Run `npm install`
 
 ## Run Instructions
-1. Change the current directory to the application folder in your repository.
+1. Change the current directory to the **application** folder in your repository.
 2. Run `npm start`
+
+## Link to Web Application
+http://localhost:3000/
 
