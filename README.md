@@ -12,7 +12,28 @@
 ## Video Walkthrough:
 Here's a walkthrough of implemented features:
 
-https://www.youtube.com/watch?v=qWkmY2Wqcb8&t=11s
+**Registration:**
+
+![registrationWalkthrough](https://github.com/sderazo/Photo-App/assets/76634204/732b96d2-cd76-4577-bf94-181dcbe2d80c)
+
+**Login:**
+
+![loginWalkthrough2](https://github.com/sderazo/Photo-App/assets/76634204/7522dcdc-f7fe-4b42-9bdc-3ac10b0720fb)
+
+**Post Image:**
+
+![postWalkthrough3](https://github.com/sderazo/Photo-App/assets/76634204/eb9fdedb-a60e-4ff4-8e0f-3ddfb325b680)
+
+**Search:**
+
+![searchWalkthrough2](https://github.com/sderazo/Photo-App/assets/76634204/edb75e29-0d34-4f59-8328-7b0b59f18d52)
+
+**Comment:**
+
+![commentWalkthrough](https://github.com/sderazo/Photo-App/assets/76634204/73412ec4-9e87-4050-8aea-f82162d58c0a)
+
+
+
 
 
 # Build/Run Instructions
