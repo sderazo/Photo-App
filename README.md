@@ -32,7 +32,7 @@ Here's a walkthrough of implemented features:
 
 ![commentWalkthrough](https://github.com/sderazo/Photo-App/assets/76634204/73412ec4-9e87-4050-8aea-f82162d58c0a)
 
-
+GIFs created with LICEcap
 
 
 
